@@ -17,6 +17,12 @@ def main():
     )
     print(response.text)
 
+    if response.usage_metadata is None:
+        raise RuntimeError("API request failed to return usage metadata. The request may have failed.")
+
+    # 2. Print the token counts
+    print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
+    print(f"Response tokens: {response.usage_metadata.candidates_token_count}")
 
 if __name__ == "__main__":
     main()
