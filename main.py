@@ -1,4 +1,5 @@
 import os
+import argparse
 from dotenv import load_dotenv
 from google import genai
 
@@ -11,9 +12,16 @@ if api_key is None:
 client = genai.Client(api_key=api_key)
 
 def main():
+    parser = argparse.ArgumentParser(description="A simple CLI AI Agent powered by Gemini")
+    parser.add_argument("user_prompt", type=str, help="The prompt you want to send to the AI")
+    args = parser.parse_args()    
+    
+    prompt_text = args.user_prompt
+    print(f"User prompt: {prompt_text}")
+
     response = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents="Why is Boot.dev such a great place to learn backend development? Use one paragraph maximum."
+        contents=prompt_text
     )
     print(response.text)
 
@@ -23,6 +31,8 @@ def main():
     # 2. Print the token counts
     print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
     print(f"Response tokens: {response.usage_metadata.candidates_token_count}")
+    print("Response:")
+    print(response.text)
 
 if __name__ == "__main__":
     main()
