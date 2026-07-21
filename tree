@@ -1,0 +1,39 @@
+~/projects/aiagent $ tree
+.
+├── calculator
+│   ├── lorem.txt
+│   ├── main.py
+│   ├── pkg
+│   │   ├── calculator.py
+│   │   ├── morelorem.txt
+│   │   ├── __pycache__
+│   │   │   ├── calculator.cpython-313.pyc
+│   │   │   └── render.cpython-313.pyc
+│   │   └── render.py
+│   └── tests.py
+├── call_function.py
+├── config.py
+├── functions
+│   ├── get_file_content.py
+│   ├── get_files_info.py
+│   ├── __pycache__
+│   │   ├── get_file_content.cpython-313.pyc
+│   │   ├── get_files_info.cpython-313.pyc
+│   │   ├── run_python_file.cpython-313.pyc
+│   │   └── write_file.cpython-313.pyc
+│   ├── run_python_file.py
+│   └── write_file.py
+├── main.py
+├── prompts.py
+├── __pycache__
+│   ├── call_function.cpython-313.pyc
+│   ├── config.cpython-313.pyc
+│   └── prompts.cpython-313.pyc
+├── pyproject.toml
+├── README.md
+├── test_get_file_content.py
+├── test_get_files_info.py
+├── test_run_python_file.py
+├── test_write_file.py
+├── tree
+└── uv.lock
